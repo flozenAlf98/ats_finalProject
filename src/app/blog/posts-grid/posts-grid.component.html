@@ -1,0 +1,25 @@
+<div class="postsGrid" >
+
+    <div class="previewCard" *ngFor="let post of posts"  [style.background-image]="'url(' + post.image + ')'">
+
+        <a>
+            <div class="contentCard">
+                <h2>{{ post.title }}</h2>
+                <div class="commentsCard">{{ post.comments.length }} Comments </div>
+                <div class="descriptionCard">{{ post.description }}</div>
+                <div class="tagCard">{{ post.category }}</div>
+            </div>
+        </a>
+
+        <div class="actionsCard">
+            <button mat-icon-button aria-label="Edit this post." (click)="editar(post)" >
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Delete this post." (click)="borrar(post.id)" >
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>

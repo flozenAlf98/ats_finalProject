@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>{{ dialogTitle }}</h1>
+
+<form (ngSubmit)="accionar()">
+
+    <mat-dialog-content>
+
+        <mat-form-field class="form-field">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" name="Title" [(ngModel)]="newPost.title">
+            <button mat-button *ngIf="newPost.title" matSuffix mat-icon-button aria-label="Clear" (click)="newPost.title=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field class="form-field">
+            <mat-label>Description</mat-label>
+            <textarea matInput name="Description" [(ngModel)]="newPost.description"></textarea>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field class="form-field">
+            <mat-label>Category</mat-label>
+            <mat-select [(ngModel)]="newPost.category" name="category">
+                <mat-option *ngFor="let item of categories" [value]="item">
+                {{ item | titlecase }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br>
+        <mat-form-field class="form-field">
+            <mat-label>URL of the image</mat-label>
+            <input matInput type="text" name="image" [(ngModel)]="newPost.image">
+            <mat-icon matSuffix>link</mat-icon>
+        </mat-form-field>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+
+        <button mat-flat-button mat-dialog-close>Cancel</button>
+        <button mat-flat-button color="primary" type="submit" [mat-dialog-close]="true">Save</button>
+
+    </mat-dialog-actions>
+
+</form>

@@ -1,0 +1,33 @@
+<h3>Agregar</h3>
+<hr>
+
+<form (ngSubmit)="agregar()">
+
+    <mat-form-field class="example-form-field">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" name="Nombre" [(ngModel)]="nuevo.nombre">
+        <button mat-button *ngIf="nuevo.nombre" matSuffix mat-icon-button aria-label="Clear" (click)="nuevo.nombre=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <!-- <input
+        type="text"
+        placeholder="Nombre"
+        name="Nombre"
+        [(ngModel)]="nuevo.nombre"
+    /> -->
+
+    <br>
+
+    <input
+        type="number"
+        placeholder="Poder"
+        name="Poder"
+        [(ngModel)]="nuevo.poder"
+    />
+
+    <br>
+    
+    <button type="submit">Agregar</button>
+
+</form>

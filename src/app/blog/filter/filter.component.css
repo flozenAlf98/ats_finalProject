@@ -1,0 +1,8 @@
+.boton-flotante {
+    background-color: coral;
+    color: white;
+    top: 200px;
+    right: 15px;
+    position: fixed;
+    z-index: 1;
+}
